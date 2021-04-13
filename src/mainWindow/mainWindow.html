@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Athan App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/themes/darkTheme.css">
+    <link rel="stylesheet" href="assets/css/windowBar.css">
+    <link rel="stylesheet" href="assets/css/mainWindow.css">
+    <link rel="stylesheet" href="assets/css/status.css">
+    <link rel="stylesheet" href="assets/css/libraries/popup.css">
+    <link rel="stylesheet" href="assets/css/libraries/section.css">
+    <link rel="stylesheet" href="assets/css/libraries/richInput.css">
+  </head>
+  <body>
+    
+    <!-- Window Controls -->
+    <header id="titlebar">
+      <div id="drag-region">
+        <div id="window-title">
+          <img src="" height="20px">
+          <span class="window-title" style="padding-left: 10px;">Athan App</span>
+        </div>
+        
+        <div id="window-controls">
+          <div class="button" id="min-button">
+            <img src="assets/img/window_icons/minimize.png" class="window-icon">
+          </div>
+          <div class="button" id="max-button">
+            <img src="assets/img/window_icons/maximize.png" class="window-icon">
+          </div>
+          <div class="button" id="restore-button">
+            <img src="assets/img/window_icons/restore.png" class="window-icon">
+          </div>
+          <div class="button" id="close-button">
+            <img src="assets/img/window_icons/close.png" class="window-icon">
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    
+    <div class="app">
+      <p class="header">Athan App</p>
+      <p class="sub-header" id="time"></p>
+      <div class="table">
+        <div class="column" id="prayer-name">
+          <p class="cell prayer-name" id="title-name">Prayers</p>
+          <p class="cell prayer-name" id="imsak-name">Imsak</p>
+          <p class="cell prayer-name" id="fajr-name">Fajr</p>
+          <p class="cell prayer-name" id="duhr-name">Duhr</p>
+          <p class="cell prayer-name" id="asr-name">Asr</p>
+          <p class="cell prayer-name" id="maghrib-name">Maghrib</p>
+          <p class="cell prayer-name" id="isha-name">Isha</p>
+        </div>
+        <div class="column" id="prayer-time">
+          <p class="cell prayer-time" id="title-time">Time</p>
+          <p class="cell prayer-time" id="imsak-time"></p>
+          <p class="cell prayer-time" id="fajr-time"></p>
+          <p class="cell prayer-time" id="duhr-time"></p>
+          <p class="cell prayer-time" id="asr-time"></p>
+          <p class="cell prayer-time" id="maghrib-time"></p>
+          <p class="cell prayer-time" id="isha-time"></p>
+        </div>
+        <div class="column" id="prayer-remaining">
+          <p class="cell prayer-remaining" id="title-remaining">Time Remaining</p>
+          <p class="cell prayer-remaining" id="imsak-remaining"></p>
+          <p class="cell prayer-remaining" id="fajr-remaining"></p>
+          <p class="cell prayer-remaining" id="duhr-remaining"></p>
+          <p class="cell prayer-remaining" id="asr-remaining"></p>
+          <p class="cell prayer-remaining" id="maghrib-remaining"></p>
+          <p class="cell prayer-remaining" id="isha-remaining"></p>
+        </div>
+        <div class="column" id="prayer-volume">
+          <p class="cell prayer-volume" id="title-volume">Volume</p>
+          <!-- Imsak -->
+          <div class="row">
+            <input type="range" class="cell" id="imsak-volume" min="0" max="100" value="0">
+            <p class="cell prayer-volume" id="imsak-volume">0%</p>
+          </div>
+
+          <!-- Fajr -->
+          <div class="row">
+            <input type="range" class="cell" id="fajr-volume" min="0" max="100" value="100">
+            <p class="cell prayer-volume" id="fajr-volume">100%</p>
+          </div>
+          
+          <!-- Duhr -->
+          <div class="row">
+            <input type="range" class="cell" id="duhr-volume" min="0" max="100" value="100">
+            <p class="cell prayer-volume" id="duhr-volume">100%</p>
+          </div>
+          
+          <!-- Asr -->
+          <div class="row">
+            <input type="range" class="cell" id="asr-volume" min="0" max="100" value="100">
+            <p class="cell prayer-volume" id="asr-volume">100%</p>
+            </div>
+            <!-- Maghrib -->
+          <div class="row">
+            <input type="range" class="cell" id="maghrib-volume" min="0" max="100" value="100">
+            <p class="cell prayer-volume" id="maghrib-volume">100%</p>
+          </div>
+          
+          <!-- isha -->
+          <div class="row">
+            <input type="range" class="cell" id="isha-volume" min="0" max="100" value="100">
+            <p class="cell prayer-volume" id="isha-volume">100%</p>
+          </div>
+        </div>
+
+        <div class="column" id="prayer-reminder">
+          <!-- Tittle -->
+          <p class="cell prayer-reminder" id="title-reminder">Reminder</p>
+          
+          <!-- Imsak -->
+          <div class="cell prayer-reminder" id="imsak-reminder">
+            <div class="housing" id="imsak-button" onclick="toggleSwitch('imsak')">
+              <div class="circle" id="imsak-button"></div>
+            </div>
+          </div>
+          
+          <!-- Fajr -->
+          <div class="cell prayer-reminder" id="fajr-reminder">
+            <div class="housing" id="fajr-button" onclick="toggleSwitch('fajr')">
+              <div class="circle" id="fajr-button"></div>
+            </div>
+          </div>
+          
+          <!-- Duhr -->
+          <div class="cell prayer-reminder" id="duhr-reminder">
+            <div class="housing" id="duhr-button" onclick="toggleSwitch('duhr')">
+              <div class="circle" id="duhr-button"></div>
+            </div>
+          </div>
+          
+          <!-- Asr -->
+          <div class="cell prayer-reminder" id="asr-reminder">
+            <div class="housing" id="asr-button" onclick="toggleSwitch('asr')">
+              <div class="circle" id="asr-button"></div>
+            </div>
+          </div>
+          
+          <!-- Maghrib -->
+          <div class="cell prayer-reminder" id="maghrib-reminder">
+            <div class="housing" id="maghrib-button" onclick="toggleSwitch('maghrib')">
+              <div class="circle" id="maghrib-button"></div>
+            </div>
+          </div>
+          
+          <!-- isha -->
+          <div class="cell prayer-reminder" id="isha-reminder">
+            <div class="housing" id="isha-button" onclick="toggleSwitch('isha')">
+              <div class="circle" id="isha-button"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <status>
+        <div class="status-container">
+          <div class="status-wrapper">
+            <img class="status-icon">
+            <div class="status-text"></div>
+          </div>  
+        </div>
+
+        <div class="settings-button">
+          <img class="settings-icon" src="assets/img/icons/gear.png" onclick="openSettings()">
+        </div>
+      </status>
+    </div>
+    <!-- Libraries -->
+    <script src="assets/js/windowControls.js"></script>
+    <script src="assets/js/libraries/addElement.js"></script>
+    <script src="assets/js/libraries/icons.js"></script>
+    <script src="assets/js/libraries/popup.js"></script>
+    <script src="assets/js/libraries/section.js"></script>
+    <script src="assets/js/libraries/richInput.js"></script>
+
+    <!-- Main -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/mainWindow.js"></script>
+
+    <!-- Components -->
+    <script src="assets/js/components/status.js"></script>
+    <script src="assets/js/components/settingsMenu.js"></script>
+    <!-- Athan components -->
+    <script src="assets/js/components/athan/athanCalculator.js"></script>
+    <script src="assets/js/components/athanControls.js"></script>
+    <script src="assets/js/components/athan/api.js"></script>
+  </body>
+</html>

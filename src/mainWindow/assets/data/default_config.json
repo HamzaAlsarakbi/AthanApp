@@ -1,0 +1,15 @@
+{
+	"update": "",
+	"prayers": {
+		"imsak": { "time": "", "volume": 0, "reminder": false },
+		"fajr": { "time": "", "volume": 0.1, "reminder": false },
+		"duhr": { "time": "", "volume": 1, "reminder": false },
+		"asr": { "time": "", "volume": 1, "reminder": false },
+		"maghrib": { "time": "", "volume": 1, "reminder": false },
+		"isha": { "time": "", "volume": 1, "reminder": false }
+	},
+	"settings": {
+		"api": { "city": "", "countryCode": "" }
+		
+	}
+}

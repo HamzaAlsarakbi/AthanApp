@@ -1,0 +1,17 @@
+{
+	"name": "athanapp",
+	"version": "1.0.0",
+	"description": "A Simple Athan app.",
+	"main": "src/index.js",
+	"scripts": {
+		"start": "electron ."
+	},
+	"author": "Hamza Alsarakbi",
+	"license": "ISC",
+	"dependencies": {
+		"unirest": "^0.6.0"
+	},
+	"devDependencies": {
+		"electron": "^8.5.5"
+	}
+}

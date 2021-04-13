@@ -1,0 +1,32 @@
+:root {
+  /** Global Settings **/
+  --primary-background: rgb(20, 20, 20);
+  --secondary-background: rgb(60, 60, 60);
+  --primary-color: rgb(240, 240, 240);
+  --secondary-color: rgb(200, 200, 200);
+  --tertiary-color: rgb(180, 180, 180);
+  --font: "Baloo Paaji 2", cursive;
+
+  /* accent */
+
+  --primary-accent: rgb(50, 72, 200);
+  --secondary-accent: #CE7A31;
+  
+  
+  --primary-hover: rgb(150, 150, 150);
+  --primary-focus: rgb(67, 67, 235);
+  --primary-border: rgb(67, 67, 235);
+  --primary-input: var(--secondary-background);
+  --form-invalid: rgb(233, 47, 47);
+
+  /** Slider **/
+  --primary-slider: var(--primary-accent);
+
+  /** Button **/
+  --primary-button: var(--primary-accent);
+
+
+  --settings-button-hover: rgba(50, 50, 50, 0.5);
+
+
+}

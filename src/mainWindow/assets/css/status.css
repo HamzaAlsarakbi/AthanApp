@@ -1,0 +1,75 @@
+status {
+  width: 97%;
+  height: 50px;
+  backdrop-filter: brightness(1.5) blur(4px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow-y: hidden;
+  border-radius: 30px;
+  justify-content: space-between;
+}
+.status-container {
+  display: flex;
+  flex-direction: column;
+}
+.status-wrapper {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  animation: wrapper-draw-in 0.3s ease-out;
+}
+@keyframes wrapper-draw-in {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+/* wrapper animations */
+.wrapper-draw-out {
+  transition: 0.3s ease-out;
+  transform: translateY(-100%);
+  height: 0;
+  padding: 0;
+  opacity: 0;
+}
+
+img.status-icon {
+  height: 20px;
+  margin: 10px;
+}
+img.status-icon.rotate {
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg) 
+  }
+}
+
+
+
+/* Settings */
+.settings-button {
+  padding: 5px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.settings-button:hover {
+  transform: scale(1.1);
+  background: var(--settings-button-hover);
+}
+.settings-button:active {
+  transform: scale(0.9);
+}
+
+.settings-icon {
+  height: 30px;
+}
