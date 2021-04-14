@@ -26,6 +26,7 @@ You can play your own athan files if you do not like the athan files bundled wit
 2- Press "Open Audio Folder"
 
 3- put your audio files, they must be .mp3 or .wav and named as "imsak", "duhr", "asr", "maghrib", "isha", "athan", "reminder"
+
 The program will look for the audio file named after the prayer, if the file doesn't exist, then it will look for the "athan.mp3" or "athan.wav", if that audio file doesn't exist either, then it will use the default audio file.
 
 
