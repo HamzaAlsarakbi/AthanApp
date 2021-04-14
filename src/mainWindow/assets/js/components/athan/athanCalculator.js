@@ -53,9 +53,9 @@ function compare(hours, minutes, seconds, prayer) {
 	
 	// comparison
 	if (time == prayerTime) {
-		callToPrayer(prayer);
+		athan = new Athan(prayer);
 	} else if (time == prayerTime - 600) {
-		reminder();
+		new Athan('reminder');
 	}
 }
 

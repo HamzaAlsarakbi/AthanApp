@@ -2,8 +2,8 @@ const unirest = require('unirest');
 const req = unirest('GET', 'https://aladhan.p.rapidapi.com/timingsByCity');
 
 
-// update once every 3 hours
-setInterval(fetchPrayerTimes, 3 * 3600000);
+// update once every 10 hours
+setInterval(fetchPrayerTimes, 10 * 3600000);
 fetchPrayerTimes();
 
 function fetchPrayerTimes() {
@@ -25,7 +25,6 @@ function fetchPrayerTimes() {
         // throw new Error(res.error);
         setStatus({ src: icons.remove }, 'Failed to fetch prayer times. Possibly an invalid location. Check settings.');
       } else {
-        setStatus({ src: icons.confirm }, `Updated prayer times at ${components.time}.`);
         // console.log(res.body);
         console.table(res.body.data.timings);
         for(let prayer in config.prayers) {
@@ -35,11 +34,13 @@ function fetchPrayerTimes() {
         updatePrayerTimes();
         config.update = getTime12(new Date());
         console.log('%c Data updated at ' + config.update, 'color: lightgreen');
+        save(); 
+        setStatus({ src: icons.confirm }, `Updated prayer times at ${components.time}.`);
       }
     });
   } else {
     setTimeout(() => {
-      setStatus({ src: icons.remove }, 'Failed to fetch prayer times. Location or empty.');
+      setStatus({ src: icons.remove }, 'Failed to fetch prayer times. Enter your city and country code in the settings menu.');
     }, 1000);
   }
 }

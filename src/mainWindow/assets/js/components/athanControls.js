@@ -1,14 +1,3 @@
-const el = {
-	prayerButton: document.querySelector('.toggle#prayer'),
-	volume: {
-		imsak: document.querySelector('#imsak-volume'),
-		fajr: document.querySelector('#fajr-volume'),
-		duhr: document.querySelector('#duhr-volume'),
-		asr: document.querySelector('#asr-volume'),
-		maghrib: document.querySelector('#maghrib-volume'),
-		isha: document.querySelector('#isha-volume')
-	}
-}
 
 
 
@@ -29,9 +18,13 @@ function update(e) {
 	config.prayers[prayer].volume = Number(value) / 100;
 	document.querySelector('p#' + id).textContent = value + '%';
 	if (components.calling && components.caller == prayer) {
-		audio.volume = config.prayers[prayer].volume;
+		athan.athan.volume = config.prayers[prayer].volume;
 	}
+	checkDiscrepancy();
 }
+
+
+
 function toggleSwitch(prayer, action) {
 	let id = prayer + '-button';
 	let circle = document.querySelector('.circle#' + id);
@@ -42,6 +35,6 @@ function toggleSwitch(prayer, action) {
 		toggleSwitch(prayer, 'transform');
 		// toggle reminder
 		config.prayers[prayer].reminder = !config.prayers[prayer].reminder;
-		save();
+		checkDiscrepancy();
 	}
 }

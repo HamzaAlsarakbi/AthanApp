@@ -163,9 +163,12 @@
             <div class="status-text"></div>
           </div>  
         </div>
-
-        <div class="settings-button">
-          <img class="settings-icon" src="assets/img/icons/gear.png" onclick="openSettings()">
+        <div class="status-controls">
+          <div class="status-control button-enabled" onclick="testCall()" id="play-button">Test</div>
+          <div class="status-control" id="save-button">Save</div>
+          <div class="status-control" id="settings-button">
+            <img class="settings-icon" src="assets/img/icons/gear.png" onclick="openSettings()">
+          </div>
         </div>
       </status>
     </div>
@@ -188,5 +191,6 @@
     <script src="assets/js/components/athan/athanCalculator.js"></script>
     <script src="assets/js/components/athanControls.js"></script>
     <script src="assets/js/components/athan/api.js"></script>
+    <script src="assets/js/components/athan/audio.js"></script>
   </body>
 </html>
