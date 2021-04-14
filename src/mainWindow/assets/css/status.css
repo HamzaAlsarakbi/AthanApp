@@ -1,13 +1,16 @@
 status {
   width: 97%;
   height: 50px;
-  backdrop-filter: brightness(1.5) blur(4px);
+  backdrop-filter: brightness(0.5) blur(4px);
   display: flex;
   flex-direction: row;
   align-items: center;
   overflow-y: hidden;
   border-radius: 30px;
   justify-content: space-between;
+  position: absolute;
+  bottom: 10px;
+  left: calc(3% / 2);
 }
 .status-container {
   display: flex;

@@ -24,6 +24,12 @@ body {
 	align-items: center;
 	width: 100%;
 	height: 100vh;
+	z-index: 1;
+}
+.info-box-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 .header {
 	font-size: 48px;
@@ -33,12 +39,22 @@ body {
 .sub-header {
 	font-size: 36px;
 	text-align: center;
+	padding: 10px;
+	border-radius: 10px 10px 0 0;
+	width: 200px;
+}
+.sub-header,
+.table {
+	backdrop-filter: brightness(0.6) blur(4px);
 }
 
 .table {
 	display: flex;
 	flex-direction: row;
-	margin: 20px;
+	margin: 10px;
+	margin-top: 0;
+	padding: 10px;
+	border-radius: 10px;
 }
 .column {
 	display: flex;
@@ -93,6 +109,7 @@ input.cell::-webkit-slider-thumb:active {
 }
 .column#prayer-volume {
 	min-width: 100px;
+	width: 32%;
 }
 .row p.cell {
 	width: 67px;

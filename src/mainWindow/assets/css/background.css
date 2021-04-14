@@ -1,0 +1,17 @@
+
+.backgrounds,
+.background {
+  position: absolute;
+  min-height: 100vh;
+  min-width: 100vw;
+  max-height: 120vh;
+  z-index: 0;
+}
+.background-1-transition {
+  opacity: 0;
+  transform: scale(1.2);
+}
+.background-2-transition {
+  opacity: 0;
+  transform: scale(1.2);
+}

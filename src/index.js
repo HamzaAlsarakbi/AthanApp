@@ -12,9 +12,9 @@ app.on('ready', () => {
     title: 'athan app',
 
 		// dimensions
-		width: 800,
+		width: 700,
 		height: 730,
-		minWidth: 500,
+		minWidth: 700,
 		minHeight: 500,
     frame: false
   });

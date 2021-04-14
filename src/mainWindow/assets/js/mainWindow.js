@@ -8,7 +8,7 @@ const el = {
 		asr: document.querySelector('#asr-volume'),
 		maghrib: document.querySelector('#maghrib-volume'),
 		isha: document.querySelector('#isha-volume')
-	}
+	},
 }
 const PLAY_BUTTON = document.querySelector('#play-button');
 let athan;

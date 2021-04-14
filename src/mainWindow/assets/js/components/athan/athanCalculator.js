@@ -1,3 +1,5 @@
+let remainingTimes = {};
+
 function updatePrayerTimes() {
 	for (let prayer in config.prayers) {
 		// get prayer time
@@ -107,5 +109,20 @@ function calculateRemainingPrayer(prayerName, hours, minutes, seconds) {
 	}
 	// add up remaining time
 	strTime = '-' + remainingTime.hour + ':' + remainingTime.minute + ':' + remainingTime.second;
+	remainingTimes[prayerName] = remaining;
 	document.querySelector('#' + prayerName + '-remaining').textContent = strTime;
 }
+
+function updateBackground() {
+  let largest = remainingTimes.imsak;
+  let closestPrayer = 'imsak';
+  for(let prayer in remainingTimes) {
+    if (largest < remainingTimes[prayer] ) {
+      largest = remainingTimes[prayer];
+      closestPrayer = prayer;
+    }
+  }
+	console.log(`Using ${closestPrayer} background.`);
+  transitionBackground(path.join(__dirname, `assets/img/backgrounds/${closestPrayer}.jpg`));
+}
+updateBackground();

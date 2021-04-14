@@ -3,7 +3,7 @@ class Athan {
 		if(components.calling) athan.stopAthan();
     this.url = {
       default: path.join(__dirname + '/assets/audio/Athan Naqshbandi.mp3'),
-      defaultImsak: path.join(__dirname + '/assets/audio/AthanMecca.mp3'),
+      defaultImsak: path.join(__dirname + '/assets/audio/Athan Mecca.mp3'),
       defaultReminder: path.join(__dirname + '/assets/audio/reminder.mp3'),
       custom: [],
 			url: '',
@@ -60,7 +60,7 @@ class Athan {
 		}
 		
 		console.log(this.url.url);
-		
+		if(prayer != 'test' && prayer != 'reminder') transitionBackground(path.join(__dirname, `assets/img/backgrounds/${prayer}.jpg`));
 		// make a call to prayer
 		setStatus({ src: icons.mosque }, 'Calling to prayer.');
 		components.calling = true;
@@ -97,4 +97,16 @@ class Athan {
 }
 function testCall() {
 	athan = new Athan('test');
+}
+
+// add keybind
+document.body.addEventListener('keydown', bindAthan);
+function bindAthan(e) {
+	if(e.code == 'Space') {
+		if(components.calling) {
+			athan.stopAthan();
+		} else {
+			testCall();
+		}
+	}
 }

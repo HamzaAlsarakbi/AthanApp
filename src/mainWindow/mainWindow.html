@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/windowBar.css">
     <link rel="stylesheet" href="assets/css/mainWindow.css">
     <link rel="stylesheet" href="assets/css/status.css">
+    <link rel="stylesheet" href="assets/css/background.css">
     <link rel="stylesheet" href="assets/css/libraries/popup.css">
     <link rel="stylesheet" href="assets/css/libraries/section.css">
     <link rel="stylesheet" href="assets/css/libraries/richInput.css">
@@ -39,8 +40,11 @@
     </header>
     
     
+    <div class="backgrounds">
+      <img class="background" id="background-1">
+      <img class="background background-2-transition" id="background-2">
+    </div>
     <div class="app">
-      <p class="header">Athan App</p>
       <p class="sub-header" id="time"></p>
       <div class="table">
         <div class="column" id="prayer-name">
@@ -187,6 +191,7 @@
     <!-- Components -->
     <script src="assets/js/components/status.js"></script>
     <script src="assets/js/components/settingsMenu.js"></script>
+    <script src="assets/js/components/background.js"></script>
     <!-- Athan components -->
     <script src="assets/js/components/athan/athanCalculator.js"></script>
     <script src="assets/js/components/athanControls.js"></script>

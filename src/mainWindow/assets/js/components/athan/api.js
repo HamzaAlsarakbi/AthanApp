@@ -36,6 +36,7 @@ function fetchPrayerTimes() {
         console.log('%c Data updated at ' + config.update, 'color: lightgreen');
         save(); 
         setStatus({ src: icons.confirm }, `Updated prayer times at ${components.time}.`);
+        updateBackground();
       }
     });
   } else {
