@@ -4,7 +4,7 @@ class Athan {
     this.url = {
       default: path.join(__dirname + '/assets/audio/Athan Naqshbandi.mp3'),
       defaultImsak: path.join(__dirname + '/assets/audio/Athan Mecca.mp3'),
-      defaultReminder: path.join(__dirname + '/assets/audio/reminder.mp3'),
+      defaultReminder: path.join(__dirname + '/assets/audio/reminder.wav'),
       custom: [],
 			url: '',
     }
@@ -77,6 +77,7 @@ class Athan {
 		// change button
 		PLAY_BUTTON.textContent = 'Stop';
 		PLAY_BUTTON.setAttribute('onclick', 'athan.stopAthan()');
+		document.body.addEventListener('keydown', bindAthan);
   }
 	
 	stopAthan() {
@@ -100,13 +101,10 @@ function testCall() {
 }
 
 // add keybind
-document.body.addEventListener('keydown', bindAthan);
 function bindAthan(e) {
 	if(e.code == 'Space') {
 		if(components.calling) {
 			athan.stopAthan();
-		} else {
-			testCall();
 		}
 	}
 }
