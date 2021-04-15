@@ -39,5 +39,22 @@ npm install
 npm start
 ```
 
+# How to Package
+Assuming that you already have installed and downloaded all the dependencies. Run the following commands to package the program
+```
+npm run package-win32
+npm run package-win64
+npm run package-linux
+npm run package-mac
+```
+The packaged app will be located in bin/AthanApp-win32-x64/
+
+# How to Create an Installer
+Assuming that you already have installed and downloaded all the dependencies and packaged the program. Run the following commands to create an installer
+```
+node build_installer.js
+```
+The installer will be located in bin/installer/
+
 # Issues
 If you have any issues, please start an issue or contact me at hamoz.sq78@gmail.com

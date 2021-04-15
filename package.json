@@ -4,7 +4,11 @@
 	"description": "A Simple Athan app.",
 	"main": "src/index.js",
 	"scripts": {
-		"start": "electron ."
+		"start": "electron .",
+		"package-mac": "electron-packager . --overwrite --platform=darwgiin --arch=x64 --icon=icons/icon.png --prune=true --out=bin",
+		"package-win32": "electron-packager . AthanApp --overwrite --asar=true --platform=win32 --arch=ia32 --icon=icons/icon.ico --prune=false --out=bin --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"AthanApp\"",
+		"package-win64": "electron-packager . AthanApp --overwrite --asar=true --platform=win32 --arch=x64 --icon=icons/icon.ico --prune=false --out=bin --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"AthanApp\"",
+		"package-linux": "electron-packager . AthanApp --overwrite --asar=true --platform=linux --arch=x64 --icon=icons/icon.png --prune=true --out=bin"
 	},
 	"author": "Hamza Alsarakbi",
 	"license": "ISC",
@@ -12,6 +16,9 @@
 		"unirest": "^0.6.0"
 	},
 	"devDependencies": {
-		"electron": "^8.5.5"
+		"electron": "^8.5.5",
+		"electron-packager": "^15.2.0",
+		"electron-wix-msi": "^3.2.0",
+		"exe-icon-extractor": "^1.0.8"
 	}
 }
