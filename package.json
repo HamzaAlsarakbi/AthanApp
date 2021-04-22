@@ -8,7 +8,8 @@
 		"package-mac": "electron-packager . --overwrite --platform=darwgiin --arch=x64 --icon=icons/icon.png --prune=true --out=bin",
 		"package-win32": "electron-packager . AthanApp --overwrite --asar=true --platform=win32 --arch=ia32 --icon=icons/icon.ico --prune=false --out=bin --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"AthanApp\"",
 		"package-win64": "electron-packager . AthanApp --overwrite --asar=true --platform=win32 --arch=x64 --icon=icons/icon.ico --prune=false --out=bin --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"AthanApp\"",
-		"package-linux": "electron-packager . AthanApp --overwrite --asar=true --platform=linux --arch=x64 --icon=icons/icon.png --prune=true --out=bin"
+		"package-linux": "electron-packager . AthanApp --overwrite --asar=true --platform=linux --arch=x64 --icon=icons/icon.png --prune=true --out=bin",
+		"create_installer": "node build_installer.js"
 	},
 	"author": "Hamza Alsarakbi",
 	"license": "ISC",

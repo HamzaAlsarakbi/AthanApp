@@ -59,7 +59,7 @@ class Athan {
 			this.url.url = prayer == 'reminder' ? this.url.defaultReminder : prayer == 'imsak' ? this.url.defaultImsak : this.url.default;
 		}
 		
-		console.log(this.url.url);
+		console.log(`Using audio src: ${this.url.url}`);
 		if(prayer != 'test' && prayer != 'reminder') transitionBackground(path.join(__dirname, `assets/img/backgrounds/${prayer}.jpg`));
 		// make a call to prayer
 		setStatus({ src: icons.mosque }, 'Calling to prayer.');

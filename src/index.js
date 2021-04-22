@@ -1,28 +1,27 @@
 const { app, BrowserWindow } = require('electron');
-const url = require('url');
 const path = require('path');
+const INSTANCE_RUNNING = !app.requestSingleInstanceLock();
 
 let mainWindow;
-app.on('ready', () => {
-  mainWindow = new BrowserWindow({
-    webPreferences: {
-      nodeIntegration: true,
-      enableRemoteModule: true
-    },
-    title: 'athan app',
 
-		// dimensions
-		width: 700,
-		height: 730,
-		minWidth: 700,
-		minHeight: 500,
-    frame: false
+if (INSTANCE_RUNNING) {
+  app.quit();
+} else {
+  app.on('ready', () => {
+    mainWindow = new BrowserWindow({
+      webPreferences: {
+        nodeIntegration: true,
+        enableRemoteModule: true
+      },
+      title: 'athan app',
+  
+      // dimensions
+      width: 700,
+      height: 730,
+      minWidth: 700,
+      minHeight: 500,
+      frame: false
+    });
+    mainWindow.loadURL(path.join(__dirname, '/mainWindow/mainWindow.html'));
   });
-  mainWindow.loadURL(
-    url.format({
-      pathname: path.join(__dirname, '/mainWindow/mainWindow.html'),
-      protocol: 'file:',
-      slashes: true
-    })
-  );
-});
+}

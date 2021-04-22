@@ -57,7 +57,7 @@ function compare(hours, minutes, seconds, prayer) {
 	if (time == prayerTime) {
 		athan = new Athan(prayer);
 	} else if (time == prayerTime - 600) {
-		new Athan('reminder');
+		if(config.prayers[prayer].reminder) new Athan('reminder');
 	}
 }
 
