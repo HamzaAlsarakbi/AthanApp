@@ -52,7 +52,7 @@ The packaged app will be located in bin/AthanApp-win32-x64/
 # How to Create an Installer
 Assuming that you already have installed and downloaded all the dependencies and packaged the program. Run the following commands to create an installer
 ```
-node build_installer.js
+npm create_installer
 ```
 The installer will be located in bin/installer/
 
